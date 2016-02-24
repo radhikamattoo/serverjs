@@ -1,7 +1,7 @@
 //demo.js
 var http = require('http');
 fs = require('fs');
-var port = 3000;
+var port = 4000;
 var date = new Date();
 
 http.createServer(handleRequest).listen(port);
@@ -10,20 +10,19 @@ console.log('starting server on ' + port);
 
 function handleRequest(req, res) {
   //clean up path name
-	var path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase();
-
+  var path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase();
   //use switch case to determine what parameters to pass to servestatic
-  console.log(date.toLocaleString() + " " + req.method + " " + req.url + " " + res.statusCode);
   switch(path){
     case '/home':
-    case '/': //FIXME
+    case '':
+    case '/':
       serveStatic(res, '/public/index.html', 'text/html', 200);
       break;
-    case '/about':
-      serveStatic(res, '/public/about.html', 'text/html', 200);
+    case '/me':
+      res.writeHead(301, {'Location': '/about'});
+      res.end();
       break;
-    case 'me':
-      res.writeHead(301, {'Location' : '/public/about.html'}); //FIXME
+    case '/about':
       serveStatic(res, '/public/about.html', 'text/html', 200);
       break;
     case '/css/base.css':
@@ -38,6 +37,8 @@ function handleRequest(req, res) {
     default:
       serveStatic(res, '/public/404.html', 'text/html', 404);
   }
+  console.log(date.toLocaleString() + " " + req.method + " " + req.url + " " + res.statusCode);
+
 }
 
 function serveStatic(res, path, contentType, resCode) {
