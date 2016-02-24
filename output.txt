@@ -1,0 +1,45 @@
+ 172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/
+HTTP/1.1 200 OK
+Content-Type: text/html
+Date: Wed, 24 Feb 2016 21:44:48 GMT
+Connection: keep-alive
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/about
+HTTP/1.1 200 OK
+Content-Type: text/html
+Date: Wed, 24 Feb 2016 21:45:17 GMT
+Connection: keep-alive
+
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/ABOUT
+HTTP/1.1 200 OK
+Content-Type: text/html
+Date: Wed, 24 Feb 2016 21:45:28 GMT
+Connection: keep-alive
+
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/about/
+HTTP/1.1 200 OK
+Content-Type: text/html
+Date: Wed, 24 Feb 2016 21:45:44 GMT
+Connection: keep-alive
+
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/me
+HTTP/1.1 301 Moved Permanently
+Location: /about
+Date: Wed, 24 Feb 2016 21:45:54 GMT
+Connection: keep-alive
+
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/css/base.css
+HTTP/1.1 200 OK
+Content-Type: text/css
+Date: Wed, 24 Feb 2016 21:46:11 GMT
+Connection: keep-alive
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/img/image1.png
+HTTP/1.1 200 OK
+Content-Type: image/png
+Date: Wed, 24 Feb 2016 21:46:25 GMT
+Connection: keep-alive
