@@ -1,4 +1,10 @@
 //stringy.js
+/*
+Radhika Mattoo, rm3485@nyu.edu
+Applied Internet Tech Spring 2016
+Homework 3
+*/
+
 module.exports.Palindrome = Palindrome;
 module.exports.MutableString = MutableString;
 
@@ -43,7 +49,7 @@ function checkSymmetry(string){
 
 //Helper: check valid character (in case set() params are odd)
 function checkChar(char){
-  if(char == null || char == undefined) return false;
+  if(char === null || char === undefined) return false;
   return true;
 }
 
@@ -52,7 +58,7 @@ function checkChar(char){
 
 //MutableString constructor
 function MutableString(string){
-  if(string != ""){
+  if(string !== ""){
     this.string = string;
   }else{ return null; } //empty strings not supported
 }
@@ -60,7 +66,7 @@ function MutableString(string){
 //concat
 MutableString.prototype.concat = function(s){
   this.string += s;
-}
+};
 
 //charAt
 MutableString.prototype.charAt = function(i){
@@ -70,7 +76,7 @@ MutableString.prototype.charAt = function(i){
     returnChar = this.string[i];
     return returnChar;
   }else return undefined;
-}
+};
 
 //set(...)
 MutableString.prototype.set = function(i, ch){ //set character at index i to ch
@@ -87,12 +93,12 @@ MutableString.prototype.set = function(i, ch){ //set character at index i to ch
     //ignore pair if there are any errors (aka any of the if statements fail)
   }
 
-}
+};
 
 //tostring()
 MutableString.prototype.toString = function(){
   return this.string;
-}
+};
 
 //toCharArray()
 MutableString.prototype.toCharArray = function(){
@@ -101,7 +107,7 @@ MutableString.prototype.toCharArray = function(){
     array.push(this.string[i]);
   }
   return array;
-}
+};
 
 //-----------------------------Palindrome------------------------------------//
 
@@ -140,7 +146,7 @@ Palindrome.prototype.set = function(i, ch){
     }else{
       throw new BrokenSymmetryException("Result from set assymmetric");
     }
-}
+};
 
 //concat
 Palindrome.prototype.concat = function(s){
@@ -150,4 +156,4 @@ Palindrome.prototype.concat = function(s){
     }else{
       throw new BrokenSymmetryException("Result from concat assymetric");
     }
-}
+};

@@ -1,4 +1,10 @@
-//test.js
+//testStringy.js
+
+/*
+Radhika Mattoo, rm3485@nyu.edu
+Applied Internet Tech Spring 2016
+Homework 3
+*/
 var stringy = require('./stringy.js');
 var MutableString = stringy.MutableString;
 var Palindrome = stringy.Palindrome;

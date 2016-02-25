@@ -1,4 +1,10 @@
- 172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/
+/*
+Radhika Mattoo, rm3485@nyu.edu
+Applied Internet Tech Spring 2016
+Homework 3
+*/
+
+172-16-192-106:rm3485-homework03 mattoor$ curl -I http://localhost:4000/
 HTTP/1.1 200 OK
 Content-Type: text/html
 Date: Wed, 24 Feb 2016 21:44:48 GMT
