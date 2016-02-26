@@ -38,12 +38,14 @@ function handleRequest(req, res) {
     path = path.replace(replace, '/');
   }
 
+  //default message is OK, doing this to not violate DRY principle
+  res.statusMessage = "OK";
+
   //use switch case to determine what parameters to pass to servestatic
   switch(path){
     case '/home':
     case '':
     case '/':
-      res.statusMessage = "OK";
       serveStatic(res, '/public/index.html', 'text/html', 200);
       break;
     case '/me':
@@ -54,19 +56,15 @@ function handleRequest(req, res) {
       res.end();
       break;
     case '/about':
-      res.statusMessage = "OK";
       serveStatic(res, '/public/about.html', 'text/html', 200);
       break;
     case '/css/base.css':
-      res.statusMessage = "OK";
       serveStatic(res, '/public/css/base.css', 'text/css', 200);
       break;
     case '/img/image1.png':
-      res.statusMessage = "OK";
       serveStatic(res, '/public/img/image1.png', 'image/png', 200);
       break;
     case '/img/image2.png':
-      res.statusMessage = "OK";
       serveStatic(res, '/public/img/image2.png', 'image/png', 200);
       break;
     default:

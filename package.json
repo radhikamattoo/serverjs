@@ -1,0 +1,25 @@
+{
+  "name": "rm3485-homework03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demo.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "jshint": "^2.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0480-010-spring-2016/rm3485-homework03.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0480-010-spring-2016/rm3485-homework03/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0480-010-spring-2016/rm3485-homework03#readme"
+}

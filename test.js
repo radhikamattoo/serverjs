@@ -28,7 +28,7 @@ app.get('/about', function(req, res){
 });
 
 //404
-app.get(function(req, res){
+app.use(function(req, res){
 	res.status(404);
 	res.render('404');
 });
